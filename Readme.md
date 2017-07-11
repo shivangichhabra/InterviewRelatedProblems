@@ -1,0 +1,1 @@
+This repo contains solutions to some the problems commonly asked in interview. All the solutions in this repo are in java. Decription is provided as per need or questioned.
