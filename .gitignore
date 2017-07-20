@@ -20,11 +20,8 @@
 
 # Intellij files
 RandomAlgorithmProblems.iml
-.idea/
-.idea/workspace.xml
+.idea
 .out
-.idea/misc.xml
-
 
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
