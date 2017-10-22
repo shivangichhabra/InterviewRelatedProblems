@@ -6,11 +6,7 @@ package LinkedList;
 public class OddEvenLinkedList {
 
 
-    public class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) { val = x; }
-        }
+
     public ListNode oddEvenList(ListNode head) {
         if(head != null){
             ListNode oddHead = head;
