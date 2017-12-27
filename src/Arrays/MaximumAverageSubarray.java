@@ -22,8 +22,7 @@ public class MaximumAverageSubarray {
             for(int j=i; j<k+i; j++){
                 sum += nums[j];
             }
-            if(maxSum < sum)
-                maxSum = sum;
+            maxSum = Math.max(maxSum, sum);
         }
         return ((double)maxSum)/ ((double)k);
     }
