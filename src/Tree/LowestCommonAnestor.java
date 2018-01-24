@@ -49,4 +49,38 @@ public class LowestCommonAnestor {
 
         return root;
     }
+
+    public int lca(TreeNode A, int B, int C) {
+        if(A != null  &checkIfValueExist(A,B) & checkIfValueExist(A,C)){
+            TreeNode result = LeastCommonAncestor(A, B, C);
+            return result == null ? -1 : result.val;
+        }
+
+        return -1;
+
+    }
+
+
+    public TreeNode LeastCommonAncestor(TreeNode A, int B, int C) {
+        if(A == null)
+            return null;
+
+        if(A.val == B || A.val == C)
+            return A;
+
+        TreeNode left  = LeastCommonAncestor(A.left, B, C);
+        TreeNode  right = LeastCommonAncestor(A.right, B, C);
+
+        return left != null && right != null ? A : (left != null ?  left : right);
+    }
+
+    public boolean checkIfValueExist(TreeNode A, int V){
+        if(A == null)
+            return false;
+
+        if(A.val == V)
+            return true;
+
+        return  checkIfValueExist(A.left, V) || checkIfValueExist(A.right, V);
+    }
 }
