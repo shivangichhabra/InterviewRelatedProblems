@@ -1,6 +1,7 @@
 package Arrays;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /*
@@ -25,18 +26,41 @@ If nums = [1,2,3], a solution is:
 
  */
 public class Subsets {
-    public List<List<Integer>> subsets(int[] nums) {
+
+    //Iterative
+    public List<List<Integer>> getSubsetsI(int[] nums) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
-        backTrack(result, nums, 0, new ArrayList<Integer>());
+        result.add(new ArrayList<>()); //Empty Set
+
+        //Arrays.sort(nums);
+        for(int i=0; i<nums.length; i++){
+            List<List<Integer>> temp = new ArrayList<List<Integer>>();
+            for(List<Integer> list : result){
+                List<Integer> l = new ArrayList<>(list);
+                l.add(nums[i]);
+                temp.add(l);
+            }
+            result.addAll(temp);
+        }
+
         return result;
     }
 
-    public void backTrack(List<List<Integer>> result, int[] nums, int index, List<Integer> list){
+    //using DFS
+    public List<List<Integer>> getsubsetsR(int[] nums) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        dfs(result, nums, 0, new ArrayList<Integer>());
+        return result;
+    }
+
+    public void dfs(List<List<Integer>> result, int[] nums, int index, List<Integer> list){
         result.add(new ArrayList<Integer>(list));
         for(int i=index; i<nums.length; i++){
             list.add(nums[i]);
-            backTrack(result, nums, i+1, list);
+            dfs(result, nums, i+1, list);
             list.remove(list.size()-1);
         }
     }
+
+
 }
