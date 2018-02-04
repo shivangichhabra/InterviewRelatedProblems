@@ -14,17 +14,18 @@ public class RemoveArbitrarySpace {
         while(i<s.length()){
             if(c[i] != ' '){
                 if(c[i] == '.' || c[i] == ',' ||c[i] == '?' || c[i] == '!' && j-1 >= 0 && c[j-1] == ' ')
-                    c[j-1] = c[i++];
+                    c[j-1] = c[i];
                 else
-                    c[j++] = c[i++];
+                    c[j++] = c[i];
 
                 spaceFound = false;
-            } else if(c[i++] == ' '){
+            } else if(c[i] == ' '){
                 if(!spaceFound){
                     c[j++] = ' ';
                     spaceFound = true;
                 }
             }
+            i++;
         }
 
         //to handle remaining chars
@@ -36,6 +37,6 @@ public class RemoveArbitrarySpace {
 
     public static void main(String args[]){
         RemoveArbitrarySpace s = new RemoveArbitrarySpace();
-        System.out.println(s.removeSpace("I am  Shivangi . Who are ! you know."));
+        System.out.println(s.removeSpace("I am  Shivangi . Who are ! you ."));
     }
 }
