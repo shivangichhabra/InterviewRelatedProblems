@@ -3,20 +3,18 @@ package Tree;
 public class KthSmallestElementBST {
     int count = 0;
     int ans = Integer.MAX_VALUE;
-    public int getKthSmallestElement(TreeNode root, int k){
-       traverse(root, k);
-       return ans;
-    }
 
-    public void traverse(TreeNode root, int k){
-        if(root == null)
-            return;
+    public int kthsmallest(TreeNode A, int B) {
+        if(A == null)
+            return 0;
 
-        traverse(root.left, k);
-        count--;
-        if(count == k)
-            ans = root.val;
+        kthsmallest(A.left, B);
+        count++;
+        if(count == B)
+            ans = A.val;
 
-        traverse(root.right, k);
+        kthsmallest(A.right, B);
+        return ans;
+
     }
 }
