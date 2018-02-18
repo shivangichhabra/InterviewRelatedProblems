@@ -28,4 +28,24 @@ public class ReverseBetween {
         return dummy.next;
     }
 
+    public static void main(String args[]){
+        ReverseBetween rb = new ReverseBetween();
+        ListNode l = new ListNode(1);
+        l.next = new ListNode(2);
+        l.next.next = new ListNode(3);
+        l.next.next.next = new ListNode(4);
+        l.next.next.next.next= new ListNode(5);
+        ListNode temp = l;
+        while(temp != null){
+            System.out.print(temp.val + " ");
+            temp = temp.next;
+        }
+
+        System.out.println("\n------------------------");
+        ListNode head = rb.reverseBetween(l, 1, 4);
+        while(head != null){
+            System.out.print(head.val + " ");
+            head = head.next;
+        }
+    }
 }
