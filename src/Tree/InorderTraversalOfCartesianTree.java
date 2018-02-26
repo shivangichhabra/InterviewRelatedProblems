@@ -3,7 +3,7 @@ package Tree;
 import java.util.ArrayList;
 
 /**
- * Cartesian Tree has the max value at the root node.
+ * Property: Cartesian Tree has the max value at the root node.
  */
 public class InorderTraversalOfCartesianTree {
     public int getMax(ArrayList<Integer> A, int start, int end){
