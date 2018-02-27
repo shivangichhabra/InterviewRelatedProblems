@@ -19,9 +19,6 @@
 *.rar
 
 # Intellij files
-GeeksForGeeksProblems.iml
-.idea
-.idea/misc.xml
 out/
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
