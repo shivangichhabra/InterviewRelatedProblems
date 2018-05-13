@@ -12,13 +12,13 @@ public class ReverseBetween {
 
         ListNode prev = dummy;
         for(int i=0; i<m-1; i++){
-            prev = prev.next; // node between reverse process
+            prev = prev.next; // node before reverse process
         }
 
         ListNode start = prev.next; // start of reverse
         ListNode next = start.next; // node to be reversed
 
-        for(int i=0; i<n-m; i++){
+        for(int i=0; i<n-m ; i++){
             start.next = next.next;
             next.next = prev.next;
             prev.next = next;
@@ -42,7 +42,7 @@ public class ReverseBetween {
         }
 
         System.out.println("\n------------------------");
-        ListNode head = rb.reverseBetween(l, 1, 4);
+        ListNode head = rb.reverseBetween(l, 2, 4);
         while(head != null){
             System.out.print(head.val + " ");
             head = head.next;

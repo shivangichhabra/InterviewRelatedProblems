@@ -3,7 +3,7 @@ package String;
 import java.util.StringTokenizer;
 
 /**
- * Created by FS047207 on 11/13/2017.
+ * Created by Shivangi on 11/13/2017.
  */
 public class RemoveArbitrarySpace {
 
