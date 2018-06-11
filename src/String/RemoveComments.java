@@ -10,7 +10,7 @@ public class RemoveComments {
             return code;
 
         boolean isComment = false;
-        StringBuilder newline = new StringBuilder();
+        StringBuilder newline = null;
         for(String line: source){
             line = line.trim();
             int i=0;
@@ -22,16 +22,13 @@ public class RemoveComments {
                     isComment = true;
                     i++;
                 }
-
                 else if(isComment && i+1 < line.length() && chars[i] == '*' && chars[i+1] == '/'){
                     isComment = false;
                     i++;
                 }
-
                 else if(!isComment && i+1 < line.length() && chars[i] == '/' && chars[i+1] == '/'){
                    break;
                 }
-
                 else if(!isComment){
                     newline.append(chars[i]);
                 }
