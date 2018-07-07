@@ -39,7 +39,7 @@ public class PathSum {
     }
 
     public void dfs(TreeNode A, int B, ArrayList<ArrayList<Integer>> list, ArrayList<Integer> sublist){
-        if(A == null)   return;
+        if(A == null) return;
 
         sublist.add(A.val);
         if(A.left == null && A.right == null && A.val == B){
