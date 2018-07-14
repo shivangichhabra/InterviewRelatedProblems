@@ -126,7 +126,6 @@ public class TicTacToe {
         return 0; // draw
     }
 
-
     public void play(){
         Random rand = new Random();
         while(!isBoardFull()) {
