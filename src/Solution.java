@@ -1,7 +1,6 @@
 import java.util.PriorityQueue;
 
 public class Solution {
-
     public int[] convert(String[] inputs){
 
         int ans[] = new int[inputs.length];
@@ -15,7 +14,6 @@ public class Solution {
         return ans;
     }
 
-
     public int[] titleToNumber(String[] s) {
         int[] ans = new int[s.length];
         for(int j =0; j<s.length; j++) {
@@ -27,7 +25,6 @@ public class Solution {
         }
         return ans;
     }
-
 
     public void shiftRight(int[] buffer, int bufferLength, int N){
         for(int i=bufferLength+N-1; i>=N; i--){
@@ -60,7 +57,6 @@ public class Solution {
             }
         }
 
-
         for(String s : productCodes){
             System.out.println(s);
         }
@@ -73,10 +69,7 @@ public class Solution {
             return 2;
         else
             return 3;
-
-        }
-
-
+    }
 
     public static void main(String args[]){
         Solution s = new Solution();
